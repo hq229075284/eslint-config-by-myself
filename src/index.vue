@@ -7,6 +7,11 @@ export default {
   data() {
     return {}
   },
+  method: {
+    c() {
+      console.log(1)
+    },
+  },
 }
 </script>
 <style scoped>
