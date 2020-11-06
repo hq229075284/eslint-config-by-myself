@@ -1,6 +1,6 @@
 {
-  "name": "eslint-config-dc",
-  "version": "0.0.1",
+  "name": "@dc/eslint-config-dc",
+  "version": "0.0.3",
   "description": "eslint通用配置",
   "main": "./vue.js",
   "scripts": {
@@ -8,6 +8,9 @@
   },
   "author": "韩卿",
   "license": "MIT",
+  "files": [
+    "vue.js"
+  ],
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^4.6.1",
     "@typescript-eslint/parser": "^4.6.1",
