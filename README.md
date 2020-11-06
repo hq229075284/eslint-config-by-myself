@@ -31,7 +31,7 @@
 
 vscode安装eslint插件，之后在vscode的配置中添加：
 ```json
-// 文件保存是执行eslint的fix功能
+// 文件保存时执行eslint的fix功能
 "editor.codeActionsOnSave": {
     "source.fixAll": true,
 }

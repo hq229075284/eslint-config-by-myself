@@ -22,18 +22,19 @@ module.exports = {
     '@vue/typescript/recommended',
   ],
   rules: {
-    "@typescript-eslint/explicit-module-boundary-types": "off",
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
     'no-console': 'warn',
-    "semi":['error',"never"]
+    semi: ['error', 'never'],
+    'max-lines': ['error', { max: 600, skipBlankLines: true, skipComments: true }],
   },
-  "overrides": [
+  overrides: [
     {
       // https://github.com/typescript-eslint/typescript-eslint/blob/v4.6.1/packages/eslint-plugin/docs/rules/explicit-module-boundary-types.md#configuring-in-a-mixed-jsts-codebase
       // enable the rule specifically for TypeScript files
-      "files": ["*.ts", "*.tsx"],
-      "rules": {
-        "@typescript-eslint/explicit-module-boundary-types": ["error"]
-      }
-    }
-  ]
-};
+      files: ['*.ts', '*.tsx'],
+      rules: {
+        '@typescript-eslint/explicit-module-boundary-types': ['error'],
+      },
+    },
+  ],
+}
