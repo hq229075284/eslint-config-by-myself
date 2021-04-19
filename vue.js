@@ -16,7 +16,7 @@ module.exports = {
   // ],
   extends: [
     'airbnb-base',
-    'plugin:vue/essential',
+    'plugin:vue/recommended',
     '@vue/typescript/recommended',
   ],
   rules: {
