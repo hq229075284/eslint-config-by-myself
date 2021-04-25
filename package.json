@@ -1,6 +1,6 @@
 {
   "name": "@dc/eslint-config-dc",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "eslint通用配置",
   "main": "./vue.js",
   "scripts": {
@@ -17,6 +17,7 @@
     "@vue/eslint-config-typescript": "^7.0.0",
     "eslint": "^7.12.1",
     "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-import-resolver-webpack": "^0.13.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-vue": "^7.1.0",
     "typescript": "^4.0.5"
