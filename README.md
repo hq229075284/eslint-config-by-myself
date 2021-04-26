@@ -7,7 +7,7 @@
 2. ref: http://192.168.2.130:9001/package/@dc/eslint-config-dc
     ```bash
     # 设置npm下载源为定川私有源
-    npm config set registry https://192.168.2.130:9000
+    npm config set registry http://192.168.2.130:9000
     # 安装eslint配置包
     npm install @dc/eslint-config-dc --save-dev 
     ```
