@@ -29,11 +29,12 @@ module.exports = {
     // 'multiline-comment-style': ['error', 'starred-block'],
     'operator-linebreak': ['error', 'after', { overrides: { '?': 'before', ':': 'before' } }],
     'object-curly-newline': ['error', { multiline: true, minProperties: 6 }],
-    'id-length': ['error', { min: 3, max: 20, exceptions: ['e', 'to', 'h', 'dd', 'v', 'from'] }],
-    'max-len': ['error', { code: 136, comments: 100 }],
+    'id-length': ['error', { min: 3, max: 20, exceptions: ['x','y','e', 'to', 'h', 'dd', 'v', 'from'] }],
+    'max-len': ['error', { code: 148, comments: 100 }],
     'no-use-before-define': ['error', { functions: false }],
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/extensions.md
     'import/extensions': ['error', 'ignorePackages', {
+      vue: 'never',
       ts: 'never',
       tsx: 'never',
       js: 'never',
