@@ -1,8 +1,9 @@
 <template>
-<div>1</div>
+  <div>1</div>
 </template>
 
-<script>
+<script lang="js">
+const a = {}
 export default {
   data() {
     return {}
