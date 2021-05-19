@@ -29,7 +29,7 @@ module.exports = {
     // 'multiline-comment-style': ['error', 'starred-block'],
     'operator-linebreak': ['error', 'after', { overrides: { '?': 'before', ':': 'before' } }],
     'object-curly-newline': ['error', { multiline: true, minProperties: 6 }],
-    'id-length': ['error', { min: 3, max: 28, exceptions: ['id', 'ol', 'd', 'ua', 'UA', 'x', 'y', 'e', 'to', 'h', 'dd', 'v', 'i', 'fn', 'from'] }],
+    'id-length': ['error', { min: 3, max: 28, exceptions: ['id', 'ol', 'on', 'd', 'ua', 'UA', 'MB', 'x', 'y', 'e', 'to', 'h', 'dd', 'v', 'i', 'j', 'k', 'fn', 'from'] }],
     'max-len': ['error', { code: 148, comments: 100 }],
     'no-use-before-define': ['error', { functions: false }],
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/extensions.md
