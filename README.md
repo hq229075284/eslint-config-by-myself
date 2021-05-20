@@ -5,7 +5,7 @@
 ## TODO
 
 - [ ] sort-string-array 规则开发
-- [ ] [集成eslint-config-prettier](https://github.com/vuejs/eslint-config-prettier)，sfc的render缩进格式话要依赖它
+- [ ] [集成eslint-config-prettier](https://github.com/vuejs/eslint-config-prettier)，sfc的render缩进格式化需要依赖prettier
 
 ## 安装
 
