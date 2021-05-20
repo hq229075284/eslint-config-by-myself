@@ -2,9 +2,16 @@
 
 定川前端通用基础eslint规则
 
+## TODO
+
+- [ ] sort-string-array 规则开发
+- [ ] [集成eslint-config-prettier](https://github.com/vuejs/eslint-config-prettier)，sfc的render缩进格式话要依赖它
+
 ## 安装
+
 1. 连接esay-connect
-2. ref: http://192.168.2.130:9001/package/@dc/eslint-config-dc
+2. ref: <http://192.168.2.130:9001/package/@dc/eslint-config-dc>
+
     ```bash
     # 设置npm下载源为定川私有源
     npm config set registry http://192.168.2.130:9000
@@ -13,7 +20,9 @@
     ```
 
 ## 配置
+
 项目根目录下创建`.eslintignore`,内容为：
+
 ```
 /*
 !/src
@@ -23,6 +32,7 @@
 ```
 
 项目根目录下创建`.eslintrc.json`,内容为：
+
 ```json
 {
     "extends": "@dc/dc/vue"
@@ -30,6 +40,7 @@
 ```
 
 vscode安装eslint插件，之后在vscode的配置中添加：
+
 ```json
 // 文件保存时执行eslint的fix功能
 "editor.codeActionsOnSave": {

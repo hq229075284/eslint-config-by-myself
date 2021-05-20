@@ -16,57 +16,106 @@ module.exports = {
   // plugins: [
   //   'vue',
   // ],
-  extends: [
-    'airbnb-base',
-    'plugin:vue/recommended',
-    '@vue/typescript/recommended',
-  ],
+  extends: ['airbnb-base', 'plugin:vue/recommended', '@vue/typescript/recommended'],
   rules: {
-    '@typescript-eslint/explicit-module-boundary-types': 'off',
-    'no-console': 'warn',
-    semi: ['error', 'never'],
-    'max-lines': ['error', { max: 600, skipBlankLines: true, skipComments: true }],
-    // 'multiline-comment-style': ['error', 'starred-block'],
-    'operator-linebreak': ['error', 'after', { overrides: { '?': 'before', ':': 'before' } }],
-    'object-curly-newline': ['error', { multiline: true, minProperties: 6 }],
-    'id-length': ['error', { min: 3, max: 28, exceptions: ['id', 'ol', 'on', 'd', 'ua', 'UA', 'MB', 'x', 'y', 'e', 'to', 'h', 'dd', 'v', 'i', 'j', 'k', 'fn', 'from'] }],
+    // http://eslint.cn/docs/rules/#stylistic-issues
+    'array-bracket-newline': ['error', { multiline: true }],
+    'array-element-newline': ['error', { minItems: 4 }],
+    'id-length': [
+      'error', {
+        min: 3,
+        max: 28,
+        exceptions: [
+          'd',
+          'dd',
+          'e',
+          'fn',
+          'from',
+          'h',
+          'i',
+          'id',
+          'j',
+          'k',
+          'MB',
+          'ol',
+          'on',
+          'to',
+          'ua',
+          'UA',
+          'v',
+          'x',
+          'y',
+        ],
+      },
+    ],
     'max-len': ['error', { code: 148, comments: 100 }],
+    'max-lines': ['error', { max: 600, skipBlankLines: true, skipComments: true }],
+    'no-console': 'warn',
     'no-use-before-define': ['error', { functions: false }],
+    'object-curly-newline': ['error', { minProperties: 6, multiline: true }],
+    'operator-linebreak': ['error', 'after', { overrides: { ':': 'before', '?': 'before' } }],
+    semi: ['error', 'never'],
+    // 'multiline-comment-style': ['error', 'starred-block'],
+
+    // https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin#supported-rules
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/extensions.md
-    'import/extensions': ['error', 'ignorePackages', {
-      vue: 'never',
-      ts: 'never',
-      tsx: 'never',
-      js: 'never',
-      mjs: 'never',
-      jsx: 'never',
-    }],
+    'import/extensions': [
+      'error', 'ignorePackages', {
+        vue: 'never',
+        ts: 'never',
+        tsx: 'never',
+        js: 'never',
+        mjs: 'never',
+        jsx: 'never',
+      },
+    ],
     // 全局用@typescript-eslint/indent，不用indent
     // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/indent.md#how-to-use
     indent: 'off',
     // https://github.com/airbnb/javascript/blob/1eadb93e377da1e56c3f91f26610e5d0a00738a9/packages/eslint-config-airbnb-base/rules/style.js#L130
-    '@typescript-eslint/indent': ['error', 2, {
-      SwitchCase: 1,
-      VariableDeclarator: 1,
-      outerIIFEBody: 1,
-      // MemberExpression: null,
-      FunctionDeclaration: {
-        parameters: 1,
-        body: 1,
+    '@typescript-eslint/indent': [
+      'error', 2, {
+        SwitchCase: 1,
+        VariableDeclarator: 1,
+        outerIIFEBody: 1,
+        // MemberExpression: null,
+        FunctionDeclaration: {
+          parameters: 1,
+          body: 1,
+        },
+        FunctionExpression: {
+          parameters: 1,
+          body: 1,
+        },
+        CallExpression: { arguments: 1 },
+        ArrayExpression: 1,
+        ObjectExpression: 1,
+        ImportDeclaration: 1,
+        flatTernaryExpressions: false,
+        // list derived from https://github.com/benjamn/ast-types/blob/HEAD/def/jsx.js
+        ignoredNodes: [
+          'JSXElement',
+          'JSXElement > *',
+          'JSXAttribute',
+          'JSXIdentifier',
+          'JSXNamespacedName',
+          'JSXMemberExpression',
+          'JSXSpreadAttribute',
+          'JSXExpressionContainer',
+          'JSXOpeningElement',
+          'JSXClosingElement',
+          'JSXFragment',
+          'JSXOpeningFragment',
+          'JSXClosingFragment',
+          'JSXText',
+          'JSXEmptyExpression',
+          'JSXSpreadChild',
+        ],
+        ignoreComments: false,
       },
-      FunctionExpression: {
-        parameters: 1,
-        body: 1,
-      },
-      CallExpression: { arguments: 1 },
-      ArrayExpression: 1,
-      ObjectExpression: 1,
-      ImportDeclaration: 1,
-      flatTernaryExpressions: false,
-      // list derived from https://github.com/benjamn/ast-types/blob/HEAD/def/jsx.js
-      ignoredNodes: ['JSXElement', 'JSXElement > *', 'JSXAttribute', 'JSXIdentifier', 'JSXNamespacedName', 'JSXMemberExpression', 'JSXSpreadAttribute', 'JSXExpressionContainer', 'JSXOpeningElement', 'JSXClosingElement', 'JSXFragment', 'JSXOpeningFragment', 'JSXClosingFragment', 'JSXText', 'JSXEmptyExpression', 'JSXSpreadChild'],
-      ignoreComments: false,
-    }],
+    ],
   },
   overrides: [
     {
