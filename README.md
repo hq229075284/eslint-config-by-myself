@@ -5,7 +5,9 @@
 ## TODO
 
 - [ ] sort-string-array 规则开发
-- [ ] [集成eslint-config-prettier](https://github.com/vuejs/eslint-config-prettier)，sfc的render缩进格式化需要依赖prettier
+- [x] [集成eslint-config-prettier](https://github.com/vuejs/eslint-config-prettier)，sfc的render缩进格式化需要依赖prettier
+
+    > 需要共享`.prettierrc.js`和`.vscode/settings.json`。Prettier格式化比较难自定义，要再实践实践
 
 ## 安装
 

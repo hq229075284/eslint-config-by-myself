@@ -13,39 +13,22 @@ module.exports = {
     browser: true,
     node: true,
   },
-  // plugins: [
-  //   'vue',
-  // ],
-  extends: ['airbnb-base', 'plugin:vue/recommended', '@vue/typescript/recommended'],
+
+  extends: [
+    'airbnb-base',
+    'plugin:vue/recommended',
+    '@vue/typescript/recommended',
+  ],
   rules: {
     // http://eslint.cn/docs/rules/#stylistic-issues
     'array-bracket-newline': ['error', { multiline: true }],
-    'array-element-newline': ['error', { minItems: 4 }],
+    'array-element-newline': ['error', 'consistent'],
     'id-length': [
-      'error', {
+      'error',
+      {
         min: 3,
-        max: 28,
-        exceptions: [
-          'd',
-          'dd',
-          'e',
-          'fn',
-          'from',
-          'h',
-          'i',
-          'id',
-          'j',
-          'k',
-          'MB',
-          'ol',
-          'on',
-          'to',
-          'ua',
-          'UA',
-          'v',
-          'x',
-          'y',
-        ],
+        max: 40,
+        exceptions: ['d', 'dd', 'e', 'fn', 'from', 'h', 'i', 'id', 'j', 'k', 'MB', 'ol', 'on', 'to', 'ua', 'UA', 'v', 'x', 'y'],
       },
     ],
     'max-len': ['error', { code: 148, comments: 100 }],
@@ -62,7 +45,9 @@ module.exports = {
 
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/extensions.md
     'import/extensions': [
-      'error', 'ignorePackages', {
+      'error',
+      'ignorePackages',
+      {
         vue: 'never',
         ts: 'never',
         tsx: 'never',
@@ -76,7 +61,9 @@ module.exports = {
     indent: 'off',
     // https://github.com/airbnb/javascript/blob/1eadb93e377da1e56c3f91f26610e5d0a00738a9/packages/eslint-config-airbnb-base/rules/style.js#L130
     '@typescript-eslint/indent': [
-      'error', 2, {
+      'error',
+      2,
+      {
         SwitchCase: 1,
         VariableDeclarator: 1,
         outerIIFEBody: 1,
@@ -95,24 +82,7 @@ module.exports = {
         ImportDeclaration: 1,
         flatTernaryExpressions: false,
         // list derived from https://github.com/benjamn/ast-types/blob/HEAD/def/jsx.js
-        ignoredNodes: [
-          'JSXElement',
-          'JSXElement > *',
-          'JSXAttribute',
-          'JSXIdentifier',
-          'JSXNamespacedName',
-          'JSXMemberExpression',
-          'JSXSpreadAttribute',
-          'JSXExpressionContainer',
-          'JSXOpeningElement',
-          'JSXClosingElement',
-          'JSXFragment',
-          'JSXOpeningFragment',
-          'JSXClosingFragment',
-          'JSXText',
-          'JSXEmptyExpression',
-          'JSXSpreadChild',
-        ],
+        ignoredNodes: ['JSXElement', 'JSXElement > *', 'JSXAttribute', 'JSXIdentifier', 'JSXNamespacedName', 'JSXMemberExpression', 'JSXSpreadAttribute', 'JSXExpressionContainer', 'JSXOpeningElement', 'JSXClosingElement', 'JSXFragment', 'JSXOpeningFragment', 'JSXClosingFragment', 'JSXText', 'JSXEmptyExpression', 'JSXSpreadChild'],
         ignoreComments: false,
       },
     ],
@@ -126,6 +96,20 @@ module.exports = {
         '@typescript-eslint/explicit-module-boundary-types': ['error'],
         // https://github.com/typescript-eslint/typescript-eslint/blob/v4.22.0/packages/eslint-plugin/docs/rules/ban-ts-comment.md#rule-details
         '@typescript-eslint/ban-ts-comment': ['error', { 'ts-ignore': false }],
+      },
+    },
+    // 目前仅对vue文件进行Prettier格式化，用以支持render中JSX的格式化
+    {
+      files: ['*.vue'],
+      // https://github.com/prettier/eslint-plugin-prettier
+      // eslint-plugin-prettier v3.4.0 通过eslint可视化展示prettier结果
+      plugins: ['prettier'],
+      // https://github.com/prettier/eslint-config-prettier/tree/v8.3.0
+      // eslint-config-prettier 关闭prettier和eslint冲突的规则
+      extends: ['prettier'],
+      rules: {
+        // https://github.com/prettier/eslint-plugin-prettier#installation
+        'prettier/prettier': 'warn',
       },
     },
   ],
