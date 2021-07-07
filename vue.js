@@ -23,6 +23,7 @@ module.exports = {
     // http://eslint.cn/docs/rules/#stylistic-issues
     'array-bracket-newline': ['error', { multiline: true }],
     'array-element-newline': ['error', 'consistent'],
+    'consistent-return': 'off',
     'id-length': [
       'error',
       {
