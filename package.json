@@ -1,6 +1,6 @@
 {
   "name": "@dc/eslint-config-dc",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "eslint通用配置",
   "main": "./vue.js",
   "scripts": {
