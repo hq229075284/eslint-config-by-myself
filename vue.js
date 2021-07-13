@@ -101,7 +101,7 @@ module.exports = {
     },
     // 目前仅对vue文件进行Prettier格式化，用以支持render中JSX的格式化
     {
-      files: ['*.vue'],
+      files: ['*.jsx.vue'],
       // https://github.com/prettier/eslint-plugin-prettier
       // eslint-plugin-prettier v3.4.0 通过eslint可视化展示prettier结果
       plugins: ['prettier'],
