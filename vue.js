@@ -14,25 +14,35 @@ module.exports = {
     node: true,
   },
 
-  extends: [
-    'airbnb-base',
-    'plugin:vue/recommended',
-    '@vue/typescript/recommended',
-  ],
+  extends: ['airbnb-base', 'plugin:vue/recommended', '@vue/typescript/recommended'],
   rules: {
     // http://eslint.cn/docs/rules/#stylistic-issues
     'array-bracket-newline': ['error', { multiline: true }],
-    'array-element-newline': ['error', 'consistent'],
+    'array-element-newline': ['error', { multiline: true, minItems: 6 }],
     'consistent-return': 'off',
+    'comma-spacing': ['error', { before: false, after: true }],
     'id-length': [
       'error',
       {
         min: 3,
         max: 40,
+        /* eslint-disable-next-line array-element-newline */
         exceptions: ['d', 'dd', 'e', 'fn', 'from', 'h', 'i', 'id', 'j', 'k', 'MB', 'ol', 'on', 'to', 'ua', 'UA', 'v', 'x', 'y'],
       },
     ],
-    'max-len': ['error', { code: 148, comments: 100 }],
+    'max-len': [
+      'error',
+      {
+        code: 148,
+        comments: 100,
+        ignoreComments: true,
+        ignoreTrailingComments: true,
+        ignoreUrls: true,
+        ignoreStrings: true,
+        ignoreTemplateLiterals: true,
+        ignoreRegExpLiterals: true,
+      },
+    ],
     'max-lines': ['error', { max: 600, skipBlankLines: true, skipComments: true }],
     'no-console': 'warn',
     'no-use-before-define': ['error', { functions: false }],
@@ -83,7 +93,24 @@ module.exports = {
         ImportDeclaration: 1,
         flatTernaryExpressions: false,
         // list derived from https://github.com/benjamn/ast-types/blob/HEAD/def/jsx.js
-        ignoredNodes: ['JSXElement', 'JSXElement > *', 'JSXAttribute', 'JSXIdentifier', 'JSXNamespacedName', 'JSXMemberExpression', 'JSXSpreadAttribute', 'JSXExpressionContainer', 'JSXOpeningElement', 'JSXClosingElement', 'JSXFragment', 'JSXOpeningFragment', 'JSXClosingFragment', 'JSXText', 'JSXEmptyExpression', 'JSXSpreadChild'],
+        ignoredNodes: [
+          'JSXElement',
+          'JSXElement > *',
+          'JSXAttribute',
+          'JSXIdentifier',
+          'JSXNamespacedName',
+          'JSXMemberExpression',
+          'JSXSpreadAttribute',
+          'JSXExpressionContainer',
+          'JSXOpeningElement',
+          'JSXClosingElement',
+          'JSXFragment',
+          'JSXOpeningFragment',
+          'JSXClosingFragment',
+          'JSXText',
+          'JSXEmptyExpression',
+          'JSXSpreadChild',
+        ],
         ignoreComments: false,
       },
     ],
@@ -97,6 +124,25 @@ module.exports = {
         '@typescript-eslint/explicit-module-boundary-types': ['error'],
         // https://github.com/typescript-eslint/typescript-eslint/blob/v4.22.0/packages/eslint-plugin/docs/rules/ban-ts-comment.md#rule-details
         '@typescript-eslint/ban-ts-comment': ['error', { 'ts-ignore': false }],
+      },
+    },
+    {
+      files: ['*.vue'],
+      rules: {
+        'vue/max-attributes-per-line': [
+          'error',
+          {
+            singleline: {
+              max: 6,
+              allowFirstLine: true,
+            },
+            multiline: {
+              max: 1,
+              allowFirstLine: false,
+            },
+          },
+        ],
+        'vue/singleline-html-element-content-newline': 'off',
       },
     },
     // 目前仅对vue文件进行Prettier格式化，用以支持render中JSX的格式化
